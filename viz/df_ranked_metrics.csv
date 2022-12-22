@@ -1,0 +1,8 @@
+,       Centrality Measures,       Centrality Measures,       Centrality Measures,       Centrality Measures
+,out_degree,closeness,pagerank,betweenness
+Rank 1,United_States,United_States,United_States,United_States
+Rank 2,United_Kingdom,Europe,France,United_Kingdom
+Rank 3,France,United_Kingdom,Europe,England
+Rank 4,Europe,France,United_Kingdom,Europe
+Rank 5,England,Germany,English_language,Africa
+Rank 6,World_War_II,World_War_II,Germany,Germany

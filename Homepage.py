@@ -11,7 +11,7 @@ import numpy as np
 import pickle as pkl
 import requests
 import nltk
-
+nltk.download('punkt')
 random.seed(200)
 
 # Function to fetch summary from Wikipedia API

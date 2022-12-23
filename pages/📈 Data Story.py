@@ -384,3 +384,7 @@ st.write("To sum up, a human being will never be able to perform according to th
     in a consistent way, because of how the brain functions facing semantics.")
 st.write("Now that we have unveiled deeper insights about players' behavior and what keeps them from reaching optimality \
     in the Wikispeedia game, we decide to investigate further improvements that can help players get closer to the shortest path.")
+
+
+st.write("Click [here](https://mehdizayene-adaes-wikispeedia-homepage-67asrh.streamlit.app/)")
+

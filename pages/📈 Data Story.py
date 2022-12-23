@@ -498,9 +498,9 @@ st.write("Moving on, one might wonder how the time spent on the game may affect 
     Since we can’t possibly have data of an optimal time spent, aka time spent on shortest paths, because they are not computed with human capacities,\
     we will be comparing both the duration of the losers, and winners games.")
 
-st.write("We found that : \xa0<b>Winners</b> have 24.89s on average per hop against 45.97s for <b>Losers</b> .",unsafe_allow_html=True)
+st.write("We found that : \xa0<u><b>Winners</b> have 24.89s on average per hop against 45.97s for <b>Losers</b></u> .",unsafe_allow_html=True)
 
-st.write("So we wanted to test the hypothesis that Winners spend on average less time per hop than losers. Performing independant <b>t-test</b> \
+st.write("So we wanted to test the hypothesis that winners spend on average less time per hop than losers. Performing independant <b>t-test</b> \
     on the means, with the alternative hypothesis being that winners spend <b>less time</b> than losers, \
     we computed the p-value = 6.021e-239 which makes us pretty confident with our assumption. ",unsafe_allow_html=True)
 
@@ -508,7 +508,8 @@ st.write("However, it’s arguable that we test on different sets of data. In ot
     or even more, they did not play the same number of games so our test may be biased.")
 
 st.write("For this particular reason, we decided to be go deeper and perform a multiple hypothesis testing on the \
-    same set of games (i.e: 10 most played games) and these are the results:")
+    same set of games (i.e: 10 most played games). We used the <b>Benjamini-Hochberg correction</b> to account for the multiplicity of \
+    the tests and these are the results:",unsafe_allow_html=True)
 
 col1,col2 = st.columns([0.25,1])
 with col2:

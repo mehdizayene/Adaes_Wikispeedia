@@ -111,6 +111,18 @@ st.markdown(
 st.markdown(
     """
 <style>
+.middle-big-font {
+    font-size:15px !important;
+    text-align: center;
+}
+</style>
+""",
+    unsafe_allow_html=True,
+)
+
+st.markdown(
+    """
+<style>
 .big-font-left {
     font-size:25px !important;
     text-align: left;
@@ -335,6 +347,11 @@ def run():
                     '<p class="big-font"><b>Here are some statistics about your game 📊: </b></p>',
                     unsafe_allow_html=True,
                 )
+                st.markdown(
+                    '<p class="middle-big-font"><b>That you can improve if you read our Data Story 🙈</b></p>',
+                    unsafe_allow_html=True,
+                )
+                st.markdown("#")
                 col0, col1, col2, col3 = st.columns([0.7, 1, 1, 1])
                 col1.metric("Number of hops", st.session_state["num_steps"])
                 col2.metric(

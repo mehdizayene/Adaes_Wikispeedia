@@ -621,3 +621,6 @@ st.write("Going through the article’s text, you might naturally find yourself 
     follow a strategy which is not even optimal. Instead, it’s better to just skim through the first lines of the article and quickly choose your next hop.\
     Following these tips is guaranteed and proven by our data to work and to actually yield the optimal path. Now that you have mastered the art of Wikispeedia, \
     why don’t you try again and see how these tips will improve your game.")
+
+st.markown("#")
+st.write("Now do you feel more confident to do [play again](https://mehdizayene-adaes-wikispeedia-homepage-67asrh.streamlit.app/) ?")

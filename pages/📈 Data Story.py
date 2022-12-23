@@ -374,7 +374,7 @@ st.write("* first moving towards central nodes ( seen from centrality going up)"
 st.write("* focusing back on the target        ( centrality decreasing )")
 st.write("This conclusion draws its statistical significance from the <b> confidence \
     intervals </b> of the curves as each curve was obtained by averaging many paths played. \
-    Moreover,<b> 2693 players </b>were involved in this study. Both those arguments make a solid \
+    Moreover,<b> 2736 players </b>were involved in this study. Both those arguments make a solid \
     statement that this behaviour is <b>generalisable</b> as we observe a great number of players converging \
     towards the same strategy.",unsafe_allow_html=True)
 

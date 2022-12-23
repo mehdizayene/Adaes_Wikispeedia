@@ -11,44 +11,47 @@ import numpy as np
 import pickle as pkl
 import requests
 import nltk
-nltk.download('punkt')
+
+nltk.download("punkt")
 random.seed(200)
 
 # Function to fetch summary from Wikipedia API
-def get_summary(title, num_sentences=4): 
+def get_summary(title, num_sentences=4):
     # Fetch summary from Wikipedia API
     params = {
-        'format': 'json',
-        'action': 'query',
-        'prop': 'extracts',
-        'exintro': '',
-        'explaintext': '',
-        'titles': title,
-        'redirects': 1,
-        'formatversion': 2
+        "format": "json",
+        "action": "query",
+        "prop": "extracts",
+        "exintro": "",
+        "explaintext": "",
+        "titles": title,
+        "redirects": 1,
+        "formatversion": 2,
     }
-    api_url = 'https://en.wikipedia.org/w/api.php'
+    api_url = "https://en.wikipedia.org/w/api.php"
     response = requests.get(api_url, params=params).json()
-    pages = response['query']['pages']
+    pages = response["query"]["pages"]
     page = pages[0]
     try:
-        summary = page['extract']
+        summary = page["extract"]
     except:
-        summary = 'No summary available'
+        summary = "No summary available"
         return summary
 
     # Tokenize summary into sentences
     sentences = nltk.sent_tokenize(summary)
 
     # Select first num_sentences sentences
-    summary = ' '.join(sentences[:num_sentences])
-    
+    summary = " ".join(sentences[:num_sentences])
+
     return summary
+
 
 def reset_counter():
     st.session_state["num_steps"] = 1
     st.session_state["won"] = False
     st.session_state["abandoned"] = False
+    st.session_state["last_nodes"] = []
 
 
 # Find to which percent of times your time belongs to
@@ -67,6 +70,12 @@ def increment_counter():
     if "num_steps" not in st.session_state:
         reset_counter()
     st.session_state["num_steps"] += 1
+
+
+def decrement_counter():
+    if "num_steps" not in st.session_state:
+        reset_counter()
+    st.session_state["num_steps"] -= 1
 
 
 st.set_page_config(
@@ -215,6 +224,7 @@ def import_time():
 
 def set_current_node(node, target_node):
     slate.empty()
+    st.session_state["last_nodes"].append(st.session_state["current_node"])
     st.session_state["current_node"] = node
     st.session_state["target_node"] = target_node
     increment_counter()
@@ -223,31 +233,48 @@ def set_current_node(node, target_node):
     st.experimental_rerun()
 
 
+def step_back(target_node):
+    slate.empty()
+    # pop element from list
+    st.session_state["current_node"] = st.session_state["last_nodes"].pop(-1)
+    st.session_state["target_node"] = target_node
+    decrement_counter()
+    st.experimental_rerun()
+
+
 def play_round(G_articles, current_node, target_node):
 
     col1, col2, col3 = st.columns([1.4, 1, 1])
-    hint=""
-    try :
-        hint = str(nx.shortest_path(G_articles,current_node,target_node)[1])
-    except :
+    hint = ""
+    try:
+        hint = str(nx.shortest_path(G_articles, current_node, target_node)[1])
+    except:
         hint = "seems like there is no path to the target, Start the game again !"
     with col1:
         st.write(f"**Current aritcle:** {current_node}")
         st.write(f"**Target article:** {target_node}")
     with col2:
         st.write(f"**Nodes count :** {st.session_state.get('num_steps', 0)}")
-    
+
     with col3:
         with st.expander("Get Hint !"):
             hint
     st.write("#")
     st.markdown("***")
-    st.write("<b>Snippet article : </b>" + get_summary(current_node),unsafe_allow_html=True)
+    st.write(
+        "<b>Snippet article : </b>" + get_summary(current_node), unsafe_allow_html=True
+    )
     neighbors = list(G_articles.neighbors(current_node))
 
     with st.form("form"):
         selection = st.radio("Selection", neighbors, horizontal=True)
         col1, col2, col3 = st.columns([3.1, 3, 1])
+        if st.session_state["num_steps"] > 1:
+            with col1:
+                back_button = st.form_submit_button("Back")
+                if back_button and not st.session_state["abandoned"]:
+                    if not st.session_state["end_game"]:
+                        step_back(target_node)
 
         with col2:
             submit_form = st.form_submit_button("Submit")
@@ -324,7 +351,10 @@ def run():
                     delta_color="inverse" if diff_nodes != 0 else "normal",
                 )
                 st.markdown("***")
-            elif st.session_state["FormSubmitter:form-Abandon"] or st.session_state["abandoned"]:
+            elif (
+                st.session_state["FormSubmitter:form-Abandon"]
+                or st.session_state["abandoned"]
+            ):
                 st.session_state["abandoned"] = True
                 st.markdown(
                     '<p class="big-font"><b>Well... Don\'t give up yet ! 💪</b></p>',

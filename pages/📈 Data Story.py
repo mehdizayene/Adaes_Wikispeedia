@@ -505,9 +505,9 @@ st.write("So we wanted to test the hypothesis that Winners spend on average less
     we computed the p-value = 6.021e-239 which makes us pretty confident with our assumption. ",unsafe_allow_html=True)
 
 st.write("However, it’s arguable that we test on different sets of data. In other words, the winners and losers may have not played the same games, \
-    or even more, they did not play the same number of games so our test may be biassed.")
+    or even more, they did not play the same number of games so our test may be biased.")
 
-st.write("For this particular reason, we decided to be go deeper and perform a multiple hypothesis testing on a the \
+st.write("For this particular reason, we decided to be go deeper and perform a multiple hypothesis testing on the \
     same set of games (i.e: 10 most played games) and these are the results:")
 
 col1,col2 = st.columns([0.25,1])

@@ -407,8 +407,10 @@ st.write("So, to wrap up everything we said so far, the shortest paths, as well 
 
 st.write("Moving further with our analysis, an interesting approach for players would be to consider the semantics of every choice they make\
     relative to the current article. So, let’s try to investigate this game plan.")
-st.markdown("##")
 
+st.markdown("#")
+st.markdown("***")
+st.markdown("#")
 st.markdown('<p class="title-font-left"><b>2. What is the semantic meaning of the played games paths?</b></p>', unsafe_allow_html=True)
 
 
@@ -470,6 +472,8 @@ st.write("Now that we have unveiled deeper insights about players' behavior and 
     we decide to investigate further improvements that can help players get closer to the shortest path.")
 
 
+st.markdown("#")
+st.markdown("***")
 st.markdown("#")
 st.markdown('<p class="title-font-left"><b>3. Are there any strategies to avoid ?</b></p>', unsafe_allow_html=True)
 
@@ -605,7 +609,8 @@ st.write("All the hypothesis testing points towards the fact that winners spend 
     semantically perfect. In that sense, you get closer to the behaviour of the shortest path.")
 
 st.markdown("#")
-
+st.markdown("***")
+st.markdown("#")
 st.markdown('<p class="title-font"><b>Conclusion</b></p>', unsafe_allow_html=True)
 
 st.write("Now that we have analysed every potential aspect of the game using the data available, \

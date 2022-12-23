@@ -200,7 +200,7 @@ st.markdown("""
 
 st.markdown('<p class="big-font">The idea behind this study takes its roots in an observation of the behavior of Wikispeedia’s players.\
     While carefully studying some rounds of this game, we noticed a variety of patterns and strategies followed by most players.\
-    In light of this, we articulate our story around four main chapters :</p>', unsafe_allow_html=True)
+    In light of this, we articulate our story around three main chapters :</p>', unsafe_allow_html=True)
 st.write("##")
 
 col1, col2, col3 = st.columns([1,1,1])

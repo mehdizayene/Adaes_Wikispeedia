@@ -180,9 +180,9 @@ with col2:
     )
 
 col0, col1, col2, col3 = st.columns([0.6, 1, 1, 1])
-col1.metric("Games Played", "28 713 ")
-col2.metric("Users Failed", "3635 ", "12.7 %", delta_color="inverse")
-col3.metric("Articles", "4600 ")
+col1.metric("Games Played", "66 869")
+col2.metric("Users Failed", "5494 ", "27.8 %", delta_color="inverse")
+col3.metric("Articles", "4604 ")
 
 st.markdown("***")
 

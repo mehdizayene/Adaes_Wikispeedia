@@ -500,8 +500,9 @@ st.write("Moving on, one might wonder how the time spent on the game may affect 
 
 st.write("We found that : \xa0<b>Winners</b> have 24.89s on average per hop against 45.97s for <b>Losers</b> .",unsafe_allow_html=True)
 
-st.write("So we wanted to test the hypothesis that Winners spend on average less time per hop than losers. Using statistical tools, \
-    we computed the p-value = 6.021e-239 makes us pretty confident with our assumption. ")
+st.write("So we wanted to test the hypothesis that Winners spend on average less time per hop than losers. Performing independant <b>t-test</b> \
+    on the means, with the alternative hypothesis being that winners spend <b>less time</b> than losers, \
+    we computed the p-value = 6.021e-239 which makes us pretty confident with our assumption. ",unsafe_allow_html=True)
 
 st.write("However, it’s arguable that we test on different sets of data. In other words, the winners and losers may have not played the same games, \
     or even more, they did not play the same number of games so our test may be biassed.")

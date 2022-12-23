@@ -450,7 +450,7 @@ plot_ply_sp(sp_shortest_path_semantic,"Semantic")
 st.write("From the above plots, we discover an interesting difference from the previous graphs of the players. \
     As a matter of fact, shortest paths do not seem to follow semantic order along the path. \
     We can clearly notice an evolution increasing in some graphs, decreasing in others, and even both in a couple of them.\
-    But before jumping to conclusions only from 25 paths, let’s explore the rest of the shortest paths and see if we can generalise this fact.")
+    But before jumping to conclusions only based on 25 paths, let’s explore the rest of the shortest paths and see if we can generalise this fact.")
 
 
 

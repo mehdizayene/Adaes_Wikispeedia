@@ -514,88 +514,88 @@ st.write("For this particular reason, we decided to be go deeper and perform a m
 col1,col2 = st.columns([0.25,1])
 with col2:
     st.markdown("""
-       <style type="text/css">
-       .tg  {border-collapse:collapse;border-spacing:0;}
-       .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-         overflow:hidden;padding:10px 5px;word-break:normal;}
-       .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-         font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-       .tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
-       .tg .tg-0lax{text-align:left;vertical-align:top}
-       .tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
-       .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-       </style>
-       <table class="tg">
-       <thead>
-         <tr>
-           <th class="tg-1wig"></th>
-           <th class="tg-1wig"><span style="font-style:normal;text-decoration:none">p_value</span></th>
-           <th class="tg-1wig"><span style="font-style:normal;text-decoration:none">reject_null</span></th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr>
-           <td class="tg-1wig">Brain to Telephone</td>
-           <td class="tg-0lax">0.000</td>
-           <td class="tg-0lax">True</td>
-         </tr>
-         <tr>
-           <td class="tg-1wig">Pyramid to Bean</td>
-           <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;text-decoration:none">0.000</span></td>
-           <td class="tg-0lax">True</td>
-         </tr>
-         <tr>
-           <td class="tg-1wig">Asteroid to Viking</td>
-           <td class="tg-0lax">0.000</td>
-           <td class="tg-0lax">True</td>
-         </tr>
-         <tr>
-           <td class="tg-fymr">Batman to Wood</td>
-           <td class="tg-0pky"><span style="font-weight:normal;font-style:normal;text-decoration:none">0.000</span></td>
-           <td class="tg-0pky">True<br></td>
-         </tr>
-         <tr>
-           <td class="tg-fymr">Cat to Computer</td>
-           <td class="tg-0pky"><span style="font-weight:normal;font-style:normal;text-decoration:none">0.003</span></td>
-           <td class="tg-0pky">True</td>
-         </tr>
-         <tr>
-           <td class="tg-1wig">Beer to Sun</td>
-           <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;text-decoration:none">0.005</span></td>
-           <td class="tg-0lax">True</td>
-         </tr>
-         <tr>
-           <td class="tg-1wig"><span style="font-style:normal;text-decoration:none">Bird to Adolf_Hitler</span></td>
-           <td class="tg-0lax">0.007</td>
-           <td class="tg-0lax">True</td>
-         </tr>
-         <tr>
-           <td class="tg-1wig">Batman to Banana<br></td>
-           <td class="tg-0lax">0.016</td>
-           <td class="tg-0lax">True</td>
-         </tr>
-         <tr>
-           <td class="tg-1wig">Cat to Microsoft</td>
-           <td class="tg-0lax">0.022</td>
-           <td class="tg-0lax">True</td>
-         </tr>
-         <tr>
-           <td class="tg-1wig">Batman to The_Holocaust</td>
-           <td class="tg-0lax">0.027</td>
-           <td class="tg-0lax">True</td>
-         </tr>
-         <tr>
-           <td class="tg-fymr">Theatre to Zebra</td>
-           <td class="tg-0pky">0.028</td>
-           <td class="tg-0pky">True</td>
-         </tr>
-         <tr>
-           <td class="tg-1wig">Bird to Great_white_shark</td>
-           <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;text-decoration:none">0.061</span></td>
-           <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;text-decoration:none">False</span></td>
-         </tr>
-       </tbody>
-       </table>
+ <style type="text/css">
+.tg  {border-collapse:collapse;border-color:#ccc;border-spacing:0;}
+.tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-if4e{background-color:#f9f9f9;border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-btxf{background-color:#f9f9f9;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-fymr"></th>
+    <th class="tg-fymr"><span style="font-style:normal;text-decoration:none">p_value</span></th>
+    <th class="tg-fymr"><span style="font-style:normal;text-decoration:none">reject_null</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-if4e">Brain to Telephone</td>
+    <td class="tg-btxf">0.000</td>
+    <td class="tg-btxf">True</td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">Pyramid to Bean</td>
+    <td class="tg-0pky"><span style="font-weight:normal;font-style:normal;text-decoration:none">0.000</span></td>
+    <td class="tg-0pky">True</td>
+  </tr>
+  <tr>
+    <td class="tg-if4e">Asteroid to Viking</td>
+    <td class="tg-btxf">0.000</td>
+    <td class="tg-btxf">True</td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">Batman to Wood</td>
+    <td class="tg-0pky"><span style="font-weight:normal;font-style:normal;text-decoration:none">0.000</span></td>
+    <td class="tg-0pky">True<br></td>
+  </tr>
+  <tr>
+    <td class="tg-if4e">Cat to Computer</td>
+    <td class="tg-btxf"><span style="font-weight:normal;font-style:normal;text-decoration:none">0.003</span></td>
+    <td class="tg-btxf">True</td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">Beer to Sun</td>
+    <td class="tg-0pky"><span style="font-weight:normal;font-style:normal;text-decoration:none">0.005</span></td>
+    <td class="tg-0pky">True</td>
+  </tr>
+  <tr>
+    <td class="tg-if4e"><span style="font-style:normal;text-decoration:none">Bird to Adolf_Hitler</span></td>
+    <td class="tg-btxf">0.007</td>
+    <td class="tg-btxf">True</td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">Batman to Banana<br></td>
+    <td class="tg-0pky">0.016</td>
+    <td class="tg-0pky">True</td>
+  </tr>
+  <tr>
+    <td class="tg-if4e">Cat to Microsoft</td>
+    <td class="tg-btxf">0.022</td>
+    <td class="tg-btxf">True</td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">Batman to The_Holocaust</td>
+    <td class="tg-0pky">0.027</td>
+    <td class="tg-0pky">True</td>
+  </tr>
+  <tr>
+    <td class="tg-if4e">Theatre to Zebra</td>
+    <td class="tg-btxf">0.028</td>
+    <td class="tg-btxf">True</td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">Bird to Great_white_shark</td>
+    <td class="tg-0pky"><span style="font-weight:normal;font-style:normal;text-decoration:none">0.061</span></td>
+    <td class="tg-0pky"><span style="font-weight:normal;font-style:normal;text-decoration:none">False</span></td>
+  </tr>
+</tbody>
+</table>
     """,unsafe_allow_html=True)
 
 _,col2= st.columns([0.2,1])

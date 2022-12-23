@@ -565,7 +565,7 @@ with col2:
         <td class="tg-c3ow">True</td>
     </tr>
     <tr>
-        <td class="tg-zwlc"><span style="font-weight:normal;font-style:normal;text-decoration:none">Bird to Adolf_Hitler</span></td>
+        <td class="tg-1wig"><span style="font-weight:normal;font-style:normal;text-decoration:none">Bird to Adolf_Hitler</span></td>
         <td class="tg-abip">0.007</td>
         <td class="tg-abip">True</td>
     </tr>
@@ -630,4 +630,4 @@ st.write("Going through the article’s text, you might naturally find yourself 
     why don’t you try again and see how these tips will improve your game.")
 
 st.markdown("#")
-st.write("Now do you feel more confident to do [play again](https://mehdizayene-adaes-wikispeedia-homepage-67asrh.streamlit.app/) ?")
+st.write("Now do you feel more confident to [play again](https://mehdizayene-adaes-wikispeedia-homepage-67asrh.streamlit.app/) ?")

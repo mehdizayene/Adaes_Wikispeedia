@@ -160,7 +160,7 @@ st.markdown(
 )
 
 st.markdown(
-    '<p class="big-font"><b>Wikispeedia</b> is a game based on Wikipedia, where you are given a start and end article and they must\
+    '<p class="big-font"><b>Wikispeedia</b> is a game based on Wikipedia, where players are given a start and end article and they must\
     reach their goal in the fastest time possible only by using Wikipedia hyperlinks.\
     This study aims at analyzing players strategies in order to leverage out insightful conclusions about their navigational behavior.</p>',
     unsafe_allow_html=True,

@@ -324,7 +324,7 @@ def run():
                     delta_color="inverse" if diff_nodes != 0 else "normal",
                 )
                 st.markdown("***")
-            if st.session_state["FormSubmitter:form-Abandon"] or st.session_state["abandoned"]:
+            elif st.session_state["FormSubmitter:form-Abandon"] or st.session_state["abandoned"]:
                 st.session_state["abandoned"] = True
                 st.markdown(
                     '<p class="big-font"><b>Well... Don\'t give up yet ! 💪</b></p>',

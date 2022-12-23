@@ -11,6 +11,8 @@ import pickle as pkl
 import matplotlib.pyplot as plt
 from plotly.subplots import make_subplots
 import math
+import plotly.figure_factory as ff
+ 
 
 st.set_page_config(page_title="Data Story", page_icon="📰")#, layout="wide")
 
@@ -48,6 +50,11 @@ def plot_ply_sp(values,measure):
 
     st.plotly_chart(fig,use_container_width=True)
 
+def plot_distribution(out_degree_nodes) -> None:
+    fig = ff.create_distplot([out_degree_nodes], ['out_degree'], bin_size=1)
+    fig.update_layout(title_text=u'\xa0'*75+'Distribution of out_degree', title_x=0.5)
+    fig.update_xaxes(type="log", range=[0, 3], title_text='out_degree'),
+    fig.update_yaxes(title_text='density')
 
 def plot_ply(values,measure):
     num_rows = math.floor(math.sqrt(len(values)))
@@ -200,7 +207,7 @@ st.write("To start our analysis, we needed to understand how the paths are chang
 ###################################### writing ranked metrics here ###############################
 st.markdown("#")
 
-col1,col2 = st.columns([0.3,2])
+col1,col2 = st.columns([0.1,2])
 with col2:
     st.markdown("""
     <style type="text/css">
@@ -211,68 +218,74 @@ with col2:
     .tg th{background-color:#f0f0f0;border-bottom-width:1px;border-color:#ccc;border-style:solid;border-top-width:1px;
     border-width:0px;color:#333;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;
     padding:10px 5px;word-break:normal;}
-    .tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
-    .tg .tg-buh4{background-color:#f9f9f9;text-align:left;vertical-align:top}
-    .tg .tg-0lax{text-align:left;vertical-align:top}
-    .tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
-    .tg .tg-797t{background-color:#f9f9f9;font-weight:bold;text-align:left;vertical-align:top}
+    .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+    .tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+    .tg .tg-abip{background-color:#f9f9f9;border-color:inherit;text-align:center;vertical-align:top}
+    .tg .tg-zwlc{background-color:#f9f9f9;border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
     </style>
     <table class="tg">
     <thead>
     <tr>
-        <th class="tg-0lax"></th>
-        <th class="tg-amwm" colspan="4">Centrality Measures</th>
+        <th class="tg-c3ow"></th>
+        <th class="tg-7btt" colspan="5">Centrality Measures</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td class="tg-buh4"></td>
-        <td class="tg-797t">Out Degree</td>
-        <td class="tg-797t">Closeness</td>
-        <td class="tg-797t">Pagerank</td>
-        <td class="tg-797t">Betweenness</td>
+        <td class="tg-abip"></td>
+        <td class="tg-zwlc">Visits</td>
+        <td class="tg-zwlc">Out Degree</td>
+        <td class="tg-zwlc">Closeness</td>
+        <td class="tg-zwlc">Pagerank</td>
+        <td class="tg-zwlc">Betweenness</td>
     </tr>
     <tr>
-        <td class="tg-1wig">Rank 1</td>
-        <td class="tg-0lax">United States</td>
-        <td class="tg-0lax">United States</td>
-        <td class="tg-0lax">United States</td>
-        <td class="tg-0lax">United States</td>
+        <td class="tg-7btt">Rank 1</td>
+        <td class="tg-c3ow">United States</td>
+        <td class="tg-c3ow">United States</td>
+        <td class="tg-c3ow">United States</td>
+        <td class="tg-c3ow">United States</td>
+        <td class="tg-c3ow">United States</td>
     </tr>
     <tr>
-        <td class="tg-797t">Rank 2</td>
-        <td class="tg-buh4">United Kingdom</td>
-        <td class="tg-buh4">Europe</td>
-        <td class="tg-buh4">France</td>
-        <td class="tg-buh4">United Kingdom</td>
+        <td class="tg-zwlc">Rank 2</td>
+        <td class="tg-abip">Europe</td>
+        <td class="tg-abip">United Kingdom</td>
+        <td class="tg-abip">Europe</td>
+        <td class="tg-abip">France</td>
+        <td class="tg-abip">United Kingdom</td>
     </tr>
     <tr>
-        <td class="tg-1wig">Rank 3</td>
-        <td class="tg-0lax">France </td>
-        <td class="tg-0lax">United Kingdom </td>
-        <td class="tg-0lax">Europe</td>
-        <td class="tg-0lax">England</td>
+        <td class="tg-7btt">Rank 3</td>
+        <td class="tg-c3ow">United Kingdom</td>
+        <td class="tg-c3ow">France </td>
+        <td class="tg-c3ow">United Kingdom </td>
+        <td class="tg-c3ow">Europe</td>
+        <td class="tg-c3ow">England</td>
     </tr>
     <tr>
-        <td class="tg-797t">Rank 4</td>
-        <td class="tg-buh4">Europe</td>
-        <td class="tg-buh4">France</td>
-        <td class="tg-buh4">United Kingdom</td>
-        <td class="tg-buh4">Europe</td>
+        <td class="tg-zwlc">Rank 4</td>
+        <td class="tg-abip">England</td>
+        <td class="tg-abip">Europe</td>
+        <td class="tg-abip">France</td>
+        <td class="tg-abip">United Kingdom</td>
+        <td class="tg-abip">Europe</td>
     </tr>
     <tr>
-        <td class="tg-1wig">Rank 5</td>
-        <td class="tg-0lax">England</td>
-        <td class="tg-0lax">Germany</td>
-        <td class="tg-0lax">English Language</td>
-        <td class="tg-0lax">Africa</td>
+        <td class="tg-7btt">Rank 5</td>
+        <td class="tg-c3ow">Earth</td>
+        <td class="tg-c3ow">England</td>
+        <td class="tg-c3ow">Germany</td>
+        <td class="tg-c3ow">English Language</td>
+        <td class="tg-c3ow">Africa</td>
     </tr>
     <tr>
-        <td class="tg-797t">Rank 6</td>
-        <td class="tg-buh4">World War II</td>
-        <td class="tg-buh4"><span style="font-weight:400;font-style:normal">World War II</span></td>
-        <td class="tg-buh4">Germany</td>
-        <td class="tg-buh4"><span style="font-weight:400;font-style:normal">Germany</span></td>
+        <td class="tg-zwlc">Rank 6</td>
+        <td class="tg-abip">Africa</td>
+        <td class="tg-abip">World War II</td>
+        <td class="tg-abip"><span style="font-weight:400;font-style:normal">World War II</span></td>
+        <td class="tg-abip">Germany</td>
+        <td class="tg-abip"><span style="font-weight:400;font-style:normal">Germany</span></td>
     </tr>
     </tbody>
     </table>""",unsafe_allow_html=True)
@@ -306,6 +319,9 @@ with open('viz/sp_centrality.pkl','rb') as f:
 
 with open('viz/sp_semantic (1).pkl','rb') as f:
     sp_shortest_path_semantic = pkl.load(f)
+
+with open('viz/out_degree.pkl', 'rb') as f:
+    out_degree_nodes = pkl.load(f)
 
 
 plot_ply(evolution_data,"Out degree")
@@ -386,5 +402,10 @@ st.write("Now that we have unveiled deeper insights about players' behavior and 
     in the Wikispeedia game, we decide to investigate further improvements that can help players get closer to the shortest path.")
 
 
-st.write("Click [here](https://mehdizayene-adaes-wikispeedia-homepage-67asrh.streamlit.app/)")
+
+plot_distribution(out_degree_nodes)
+
+
+
+
 
